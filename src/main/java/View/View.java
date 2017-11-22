@@ -11,6 +11,7 @@ package View;
  *
  * @author julia
  */
+
 public interface View {
     void show();
 }

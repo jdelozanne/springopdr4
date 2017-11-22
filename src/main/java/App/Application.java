@@ -11,13 +11,19 @@ import View.View1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 
 /**
  *
  * @author julia
  */
+
 public class Application extends AnnotationConfigApplicationContext{
+    
+    public Application (){
+    }
 
     @Autowired 
     Controller c;
@@ -30,7 +36,7 @@ public class Application extends AnnotationConfigApplicationContext{
         Application a = context.getBean(Application.class);
         a.start();
     }
-    
+     
     @Override
     public void start() {
         
