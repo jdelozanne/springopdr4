@@ -5,10 +5,13 @@
  */
 package View;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author julia
  */
+@Component
 public class View2 implements View{
     public View2() {
     }

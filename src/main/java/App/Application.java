@@ -12,15 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 
 /**
  *
  * @author julia
  */
-
-public class Application extends AnnotationConfigApplicationContext{
+@ComponentScan({"App", "View", "controller"})
+public class Application{
     
     public Application (){
     }
@@ -32,12 +35,13 @@ public class Application extends AnnotationConfigApplicationContext{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(Controller.class, View1.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(Application.class,Controller.class, View1.class);
+             
         Application a = context.getBean(Application.class);
         a.start();
     }
      
-    @Override
+    
     public void start() {
         
         c.showView();
