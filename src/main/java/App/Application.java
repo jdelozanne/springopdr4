@@ -5,46 +5,44 @@
  */
 package App;
 
-
 import controller.Controller;
-import View.View1;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
-
 
 /**
  *
  * @author julia
  */
+
 @ComponentScan({"App", "View", "controller"})
-public class Application{
-    
-    public Application (){
+@Configuration
+public class Application {
+
+    public Application() {
     }
 
-    @Autowired 
+    @Autowired
     Controller c;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(Application.class,Controller.class, View1.class);
-             
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(Application.class);
+
         Application a = context.getBean(Application.class);
         a.start();
     }
-     
+    
     
     public void start() {
-        
+
         c.showView();
-}
+    }
 
 }

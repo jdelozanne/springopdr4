@@ -9,6 +9,7 @@ package controller;
 
 import View.View;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Controller {
 
-    @Autowired
+    @Autowired @Qualifier("NiceView")
     View view;
 
     public Controller(View view) {

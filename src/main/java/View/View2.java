@@ -5,13 +5,17 @@
  */
 package View;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
  *
  * @author julia
  */
-@Component
+
+@Component("View")
+
 public class View2 implements View{
     public View2() {
     }

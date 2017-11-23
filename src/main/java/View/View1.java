@@ -1,6 +1,5 @@
 package View;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /*
@@ -14,8 +13,7 @@ import org.springframework.stereotype.Component;
  *
  * @author julia
  */
-@Component
-@Primary
+@Component("NiceView")
 public class View1 implements View{
 
     public View1() {
